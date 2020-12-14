@@ -1,0 +1,17 @@
+.quiz {
+    
+    margin-bottom: $s-size;
+    height: 16rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    height: 3rem;
+    outline: none;
+    border: $darkGray solid 2px;
+}
+

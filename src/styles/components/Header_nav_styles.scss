@@ -1,0 +1,33 @@
+header {
+    background-color: $darkGray;
+    margin: 0;
+    padding: $s-size;
+
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+    color: white;
+}
+
+span {
+    color: orange;
+}
+
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+
+:disabled {
+    opacity: .6;
+}
+
+:disabled:hover {
+    opacity: .6;
+    color: orange;
+}

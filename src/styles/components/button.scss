@@ -1,0 +1,15 @@
+button {
+    background-color: $darkGray;
+    color: orange;
+    font-weight: bold;
+    border: none;
+    padding: $xs-size;
+
+    margin: 2px;
+    border-radius: 2px;
+    outline: none;
+}
+
+button:hover {
+    color: white;
+}
