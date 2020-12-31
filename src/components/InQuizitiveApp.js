@@ -13,7 +13,8 @@ class InQuizitiveApp extends React.Component {
             selectedQuiz: undefined,
             quizInPlay: false,
             scoreBoardDisplay: false,
-            rulesBoard: true
+            rulesBoard: true,
+            finalScore: undefined
         };
     }
     
@@ -34,11 +35,30 @@ class InQuizitiveApp extends React.Component {
             return {
                 quizInPlay: false,
                 scoreBoardDisplay: true,
-                rulesBoard: false
+                rulesBoard: false,
+                selectedQuiz: undefined
             };
         });
     };
 
+    endCurrentQuiz = () => {
+        this.setState(() => {
+            return {
+                quizInPlay: false,
+                scoreBoardDisplay: false,
+                rulesBoard: true,
+                selectedQuiz: undefined
+            };
+        });
+    };
+
+    finalScore = (score) => {
+        this.setState(() => {
+            return {
+                finalScore: score
+            };
+        });
+    };
 
     render() {
         return <div>
@@ -54,17 +74,21 @@ class InQuizitiveApp extends React.Component {
                     <Quiz 
                         selectedQuiz={this.state.selectedQuiz}
                         quizOver={this.quizOver}
-                        // finalScore={this.finalScore}
+                        finalScore={this.finalScore}
+                        endCurrentQuiz={this.endCurrentQuiz}
                     />}
 
                    
                     
                     
-                    {this.state.scoreBoardDisplay && <ScoreBoard/>}
+                    {this.state.scoreBoardDisplay && <ScoreBoard endCurrentQuiz={this.endCurrentQuiz}
+                    finalScore={this.state.finalScore}
+                    />}
                     {this.state.rulesBoard && <Rules />}
                    
                 </div>
 
+               
                 </div>
     }
 

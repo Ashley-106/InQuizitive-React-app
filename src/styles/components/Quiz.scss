@@ -1,7 +1,17 @@
 .quiz {
-    
+    border-radius: 2px;
     margin-bottom: $s-size;
-    height: 16rem;
+    padding: $s-size;
+    height: 22rem;
+    background: $darkGray;   
+}
+
+.quiz p {
+    color: white;
+}
+
+.hint {
+    color: green;
 }
 
 form {

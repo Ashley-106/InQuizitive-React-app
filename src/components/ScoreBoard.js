@@ -3,9 +3,10 @@ import InQuizitiveApp from './InQuizitiveApp';
 
 const ScoreBoard = (props) => {
 
-    return <div>
-                <h2>This is the score board.</h2>
-                <p>You scored: {props.correctScore}</p>
+    return <div className="container quiz">
+                <h2 className="title">This is the score board.</h2>
+                <p>You scored: {props.finalScore}</p>
+                <button onClick={() => props.endCurrentQuiz()}>Continue</button>
            </div>;
 
 };

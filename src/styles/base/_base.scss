@@ -7,6 +7,10 @@ body {
     font-size: $m-size;
 }
 
+.title {
+    color: orange;
+}
+
 button {
     cursor: pointer;
 }
@@ -19,5 +23,6 @@ button:disabled {
 .container {
     width: 50rem;
     margin: $xl-size auto;
+    height: 20rem;
 }
 

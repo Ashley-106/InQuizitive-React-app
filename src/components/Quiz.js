@@ -134,6 +134,8 @@ class Quiz extends React.Component  {
             /// do this when game over
             console.log('game over')
             this.props.quizOver();
+
+            this.props.finalScore(this.state.correctScore);
         }
     };
 
@@ -171,19 +173,23 @@ class Quiz extends React.Component  {
     render() {
         return <div className="container">
                     <div className="quiz">
-                        <h2> {this.props.selectedQuiz} Quiz</h2>
-                        <p>Question Count: {this.currentQuiz().activeNumber}</p>
-                        <p>Question: {this.currentQuiz().activeQuestion}</p>
+                        <h2 className="title">{this.props.selectedQuiz} Quiz</h2>
+                        <h4 className="title">Number: {this.currentQuiz().activeNumber}</h4>
+                        <p>{this.currentQuiz().activeQuestion}</p>
+                        <h4 className="hint">Hint Count: {this.state.hintCount}</h4>
+                        <h4 className="hint">{this.state.hintVisible && this.currentQuiz().activeHint}
+                        </h4>
                     </div>
                     <form>
                         <input type="text" placeholder="enter answer"></input>
                         <button onClick={this.quizControl}>Next Question</button>
                         <button onClick={this.hint}>Hint</button>
                     </form>
+                    <button onClick={() => this.props.endCurrentQuiz()}>End Current Quiz</button>
 
-                    Hint: {this.state.hintVisible && <p>{this.currentQuiz().activeHint}</p>}
+                    
 
-                    <p>Correct score: {this.state.correctScore}</p>
+                    {console.log(this.state.correctScore)}
                 </div>
     }
     
